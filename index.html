@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/script.jsx"></script>
+</head>
+<body>
+    <div id="content"></div>
+    <script type="text/javascript">
+        let h1 = React.createElement('h1',this.props,'Hello Lori, it\'s time to go!!!');
+        class HelloLori extends React.Component
+        {
+            render() {
+                return React.createElement('h1', this.props, 'Hello ' + this.props.framework, h1 );
+            }
+        }
+        ReactDOM.render(
+            React.createElement('div', null,
+                React.createElement( HelloLori,{id: 'ember', title: 'A framework...', framework: 'Ember.js' }),
+                React.createElement( HelloLori,{id: 'react', title: 'A framework...', framework: 'React.js' }),
+                React.createElement( HelloLori,{id: 'angular', title: 'A framework...', framework: 'Angular.js' })),
+            document.getElementById('content')
+        )
+    </script>
+</body>
+</html>
